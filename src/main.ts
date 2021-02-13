@@ -36,10 +36,11 @@ if (currentPlatform == platforms.WINDOWS) {
 async function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    resizable: true,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "preload.js"),
+      devTools: false,
     },
     height: height,
     width: width,
