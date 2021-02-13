@@ -1,7 +1,36 @@
 {
     "build": {
         "appId": "net.amitoj.flappytoj",
-        "artifactName": "flappytoj-${version}.${ext}"
+        "productName": "Flappytoj",
+        "copyright": "Copyright © 2021 Amitoj Singh",
+        "mac": {
+            "target": [
+                "zip"
+            ]
+        },
+        "win": {
+            "publisherName": "Amitoj Singh",
+            "target": [
+                "nsis"
+            ]
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "tar.gz"
+            ]
+        },
+        "dmg": {
+            "icon": "build/icon.icns"
+        },
+        "publish": [{
+            "provider": "github",
+            "owner": "amitojsingh366",
+            "repo": "Flappytoj",
+            "vPrefixedTagName": true,
+            "private": false,
+            "releaseType": "draft"
+        }]
     },
     "name": "flappytoj",
     "version": "1.0.0",
