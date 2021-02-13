@@ -1,42 +1,7 @@
 {
     "build": {
         "appId": "net.amitoj.flappytoj",
-        "productName": "Flappytoj",
-        "copyright": "Copyright © 2021 Amitoj Singh",
-        "mac": {
-            "target": [
-                "zip"
-            ],
-            "publish": [
-                "github"
-            ]
-        },
-        "win": {
-            "publisherName": "Amitoj Singh",
-            "target": [
-                "nsis"
-            ],
-            "publish": [
-                "github"
-            ]
-        },
-        "linux": {
-            "target": [
-                "AppImage",
-                "tar.gz"
-            ]
-        },
-        "dmg": {
-            "icon": "build/icon.icns"
-        },
-        "publish": [{
-            "provider": "github",
-            "owner": "amitojsingh366",
-            "repo": "Flappytoj",
-            "vPrefixedTagName": true,
-            "private": false,
-            "releaseType": "draft"
-        }]
+        "productName": "Flappytoj"
     },
     "name": "flappytoj",
     "version": "1.0.0",
@@ -53,7 +18,7 @@
         "watch": "tsc -w",
         "lint": "eslint -c .eslintrc --ext .ts ./src",
         "start": "npm run build && electron ./tsdist/main.js",
-        "package": "npm run build && electron-builder -p -mwl"
+        "package": "npm run build && electron-builder -mwl --win portable"
     },
     "keywords": [
         "Flappy",
