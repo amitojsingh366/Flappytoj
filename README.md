@@ -3,7 +3,9 @@
 A game i made cause i was bored. Simple [electron](https://www.electronjs.org) based flappybird ripoff
 
 ## How To Run
-
+- Download the release for your platform from [here](https://github.com/amitojsingh366/Flappytoj/releases/)
+- Exe for windows, dmg for macOS
+- Follow the instructions
 
 # License
 Flappytoj is licensed under the MIT License
