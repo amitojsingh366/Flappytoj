@@ -72,7 +72,7 @@ function createWindow() {
             switch (_a.label) {
                 case 0:
                     mainWindow = new electron_1.BrowserWindow({
-                        resizable: false,
+                        resizable: true,
                         webPreferences: {
                             nodeIntegration: true,
                             preload: path.join(__dirname, "preload.js")
@@ -105,6 +105,9 @@ electron_1.app.on("ready", function () {
         // dock icon is clicked and there are no other windows open.
         if (electron_1.BrowserWindow.getAllWindows().length === 0)
             createWindow();
+    });
+    electron_1.app.on("window-all-closed", function () {
+        electron_1.app.exit();
     });
 });
 // Quit when all windows are closed, except on macOS. There, it's common

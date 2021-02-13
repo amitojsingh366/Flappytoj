@@ -12,7 +12,6 @@
         "./resources/**/*"
     ],
     "main": "./tsdist/main.js",
-
     "scripts": {
         "build": "tsc",
         "watch": "tsc -w",
@@ -32,6 +31,7 @@
         "electron-builder": "^22.9.1"
     },
     "dependencies": {
+        "axios": "^0.21.1",
         "discord-rpc": "^3.2.0"
     }
 }

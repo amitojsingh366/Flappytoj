@@ -1,22 +1,38 @@
-let c = document.createElement("canvas");
+gameDiv = document.createElement('div');
+gameDiv.style.height = '400px';
+gameDiv.style.width = '400px';
+gameDiv.style.padding = '0px';
+gameDiv.style.margin = '0px';
+gameDiv.id = 'main-div';
+
+document.getElementById('main-div').replaceWith(gameDiv);
+
+c = document.createElement("canvas");
 c.id = "c";
 c.width = 400;
 c.height = 400;
-document.body.appendChild(c);
-let context = c.getContext("2d");
+document.getElementById('main-div').appendChild(c);
+context = c.getContext("2d");
 
-const birds = ['./resources/toj.png', './resources/teg.png', './resources/tesh.png', './resources/deep.png']
 
-const bird = new Image();
 bird.src = birds[0];
 
-let isRandomising = false;
+isRandomising = false;
 
-let birdX = birdDY = score = bestScore = 0;
-let interval = birdSize = pipeWidth = topPipeBottomY = 24;
-let birdY = pipeGap = 200;
-let canvasSize = pipeX = 400;
-let paused = false;
+birdX = birdDY = 0;
+interval = birdSize = pipeWidth = topPipeBottomY = 24;
+birdY = pipeGap = 200;
+canvasSize = pipeX = 400;
+paused = false;
+
+gameState = {
+    isPlaying: true,
+    onScreen: 'game',
+    isPaused: false,
+    userName: localStorage.getItem('userName'),
+}
+
+sendStateChange(gameState);
 
 if (localStorage.getItem('bestScore')) {
     bestScore = localStorage.getItem('bestScore');
@@ -25,15 +41,27 @@ localStorage.setItem("bestScore", bestScore);
 
 c.onclick = () => (birdDY = 9);
 document.body.onkeyup = function(e) {
-    if (e.keyCode == 32) {
-        birdDY = 9
-    }
-    if (e.key === "Escape") {
-        paused = paused ? false : true;
+    if (gameState.onScreen == 'game') {
+        if (e.keyCode == 32 || e.keyCode == 38) {
+            birdDY = 9
+        }
+        if (e.keyCode == 27) {
+            paused = paused ? false : true;
+            gameState.isPaused = paused;
+            sendStateChange(gameState);
+        }
+
+        if (e.keyCode == 72) {
+            script = document.createElement('script');
+            script.src = './resources/home.js';
+            script.id = 'main-running-script';
+
+            document.getElementById('main-running-script').replaceWith(script);
+        }
     }
 }
-
-let gameloop = setInterval(() => {
+clearInterval(gameloop);
+gameloop = setInterval(() => {
     if (!paused) {
         //bg
         context.fillStyle = "skyblue";
@@ -74,20 +102,3 @@ let gameloop = setInterval(() => {
         }
     }
 }, interval);
-
-
-function randomiseBird() {
-    let interval = setInterval(() => {
-        if (isRandomising) {
-            let random = Math.floor(Math.random() * birds.length);
-            bird.src = birds[random];
-        } else {
-            normaliseBird();
-            clearInterval(interval);
-        }
-    }, 5000);
-}
-
-function normaliseBird() {
-    bird.src = birds[0];
-}

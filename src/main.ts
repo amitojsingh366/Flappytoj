@@ -36,7 +36,7 @@ if (currentPlatform == platforms.WINDOWS) {
 async function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    resizable: false,
+    resizable: true,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "preload.js"),
@@ -65,6 +65,10 @@ app.on("ready", () => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
+
+  app.on("window-all-closed", () => {
+    app.exit();
+  })
 
 });
 
