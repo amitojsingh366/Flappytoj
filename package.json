@@ -4,7 +4,7 @@
         "productName": "Flappytoj"
     },
     "name": "flappytoj",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Simple electron based flappybird ripoff",
     "files": [
         "./build/**/*",
