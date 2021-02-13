@@ -6,12 +6,18 @@
         "mac": {
             "target": [
                 "zip"
+            ],
+            "publish": [
+                "github"
             ]
         },
         "win": {
             "publisherName": "Amitoj Singh",
             "target": [
                 "nsis"
+            ],
+            "publish": [
+                "github"
             ]
         },
         "linux": {
