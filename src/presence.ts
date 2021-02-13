@@ -47,6 +47,3 @@ async function setActivity() {
         });
     }
 }
-
-
-
