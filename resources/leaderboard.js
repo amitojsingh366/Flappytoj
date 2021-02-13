@@ -82,10 +82,10 @@ function renderTable(data) {
 
     for (let i in data) {
         tr = document.createElement('tr');
-
+        let index = Number(i) + 1;
 
         td = document.createElement('td');
-        td.innerText = `${i+1})`;
+        td.innerText = `${index})`;
         tr.appendChild(td);
         td = document.createElement('td');
         td.innerText = data[i].name;
