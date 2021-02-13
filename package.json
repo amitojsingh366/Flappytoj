@@ -18,7 +18,7 @@
         "watch": "tsc -w",
         "lint": "eslint -c .eslintrc --ext .ts ./src",
         "start": "npm run build && electron ./tsdist/main.js",
-        "package": "npm run build && electron-builder -mwl"
+        "package": "npm run build && electron-builder -p -mwl"
     },
     "keywords": [
         "Flappy",
