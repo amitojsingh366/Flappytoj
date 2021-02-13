@@ -1,0 +1,37 @@
+{
+    "build": {
+        "appId": "net.amitoj.flappytoj",
+        "artifactName": "flappytoj-${version}.${ext}"
+    },
+    "name": "flappytoj",
+    "version": "1.0.0",
+    "description": "Simple electron based flappybird ripoff",
+    "files": [
+        "./build/**/*",
+        "./tsdist/**/*",
+        "./resources/**/*"
+    ],
+    "main": "./tsdist/main.js",
+
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "lint": "eslint -c .eslintrc --ext .ts ./src",
+        "start": "npm run build && electron ./tsdist/main.js",
+        "package": "npm run build && electron-builder -mwl"
+    },
+    "keywords": [
+        "Flappy",
+        "Amitoj"
+    ],
+    "author": "Amitoj Singh",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/discord-rpc": "^3.0.4",
+        "electron": "^11.2.3",
+        "electron-builder": "^22.9.1"
+    },
+    "dependencies": {
+        "discord-rpc": "^3.2.0"
+    }
+}
