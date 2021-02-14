@@ -21,4 +21,4 @@ Flappytoj is licensed under the MIT License
 # Contributing
 Find something that is lacking? Fork the project and pull request!
 
-> NOTE: Yes i am aware that sometimes while installing on windows defender fires up and declares Flappytoj as a virus. However this is a total misunderstanding and a mistake on Microsoft's part. I even ran a virus total scan in which 1/64 engines detected a threat and that was Microsoft's. You can view the results [here](https://www.virustotal.com/gui/file/62c6cafd353ba3247ae7b2e64b06ae472a750a0eb1e60d4c4814a42a795c5f69/detection)
+> **NOTE:** Yes i am aware that sometimes while installing on windows defender fires up and declares Flappytoj as a virus. However this is a **total misunderstanding** and a mistake on Microsoft's part. I even ran a virus total scan in which only 1 out of 64 engines detected a threat and that was Microsoft's. You can view the results [here](https://www.virustotal.com/gui/file/62c6cafd353ba3247ae7b2e64b06ae472a750a0eb1e60d4c4814a42a795c5f69/detection)
