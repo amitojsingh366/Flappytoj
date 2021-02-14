@@ -13,7 +13,7 @@ A game i made cause i was bored. Simple [electron](https://www.electronjs.org) b
 
 - `esc` to pause/resume
 - `h` to go to home page
-- `spacebar`/`up arrow`/`left click` to make the bird flap
+- `spacebar`/`up arrow`/`left click` to make the toj flap
 
 # License
 Flappytoj is licensed under the MIT License
