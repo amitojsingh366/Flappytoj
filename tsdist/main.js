@@ -72,11 +72,11 @@ function createWindow() {
             switch (_a.label) {
                 case 0:
                     mainWindow = new electron_1.BrowserWindow({
-                        resizable: true,
+                        resizable: false,
                         webPreferences: {
                             nodeIntegration: true,
                             preload: path.join(__dirname, "preload.js"),
-                            devTools: true
+                            devTools: false
                         },
                         height: height,
                         width: width,
