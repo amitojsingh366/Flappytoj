@@ -7,6 +7,14 @@ A game i made cause i was bored. Simple [electron](https://www.electronjs.org) b
 - Exe for windows, dmg for macOS
 - Follow the instructions
 
+## Additional information
+
+### Keybinds (When in a game)
+
+- `esc` to pause/resume
+- `h` to go to home page
+- `spacebar`/`up arrow`/`left click` to make the bird flap
+
 # License
 Flappytoj is licensed under the MIT License
 
