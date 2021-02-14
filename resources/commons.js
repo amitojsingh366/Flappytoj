@@ -6,6 +6,7 @@ let gameState = {
 }
 
 //common
+let uname = '';
 let script = document.createElement('script');
 let spacer = document.createElement('br');
 let bestScore = score = 0;
@@ -21,12 +22,14 @@ let playBtn = document.createElement('button');
 let leadBtn = document.createElement('button');
 
 //leaderboard
+let leaderboardDiv = document.createElement('div');
 let homebtncont = document.createElement('div');
 let homebtn = document.createElement('button');
 let table = document.createElement('table');
 let tr = document.createElement('tr');
 let th = document.createElement('th');
 let td = document.createElement('td');
+let p = document.createElement('p');
 
 //game page
 let c = document.createElement("canvas");
@@ -39,19 +42,3 @@ let birdY = pipeGap = 200;
 let canvasSize = pipeX = 400;
 let paused = false;
 let isRandomising = false;
-
-function randomiseBird() {
-    let interval = setInterval(() => {
-        if (isRandomising) {
-            let random = Math.floor(Math.random() * birds.length);
-            bird.src = birds[random];
-        } else {
-            normaliseBird();
-            clearInterval(interval);
-        }
-    }, 5000);
-}
-
-function normaliseBird() {
-    bird.src = birds[0];
-}

@@ -11,9 +11,9 @@ A game i made cause i was bored. Simple [electron](https://www.electronjs.org) b
 
 ### Keybinds (When in a game)
 
-- `esc` to pause/resume
-- `h` to go to home page
-- `spacebar`/`up arrow`/`left click` to make the toj flap
+- <kbd>esc</kbd> / `right click` to pause/resume
+- <kbd>h</kbd> to go to home page
+- <kbd>Space</kbd> / <kbd>↑</kbd> / `left click` to make the toj flap
 
 # License
 Flappytoj is licensed under the MIT License

@@ -1,13 +1,13 @@
-homeDiv = document.createElement('div');
+leaderboardDiv = document.createElement('div');
 
-homeDiv.style.height = '400px';
-homeDiv.style.width = '400px';
-homeDiv.style.padding = '0px';
-homeDiv.style.margin = '0px';
-homeDiv.style.textAlign = 'center';
-homeDiv.id = 'main-div';
+leaderboardDiv.style.minHeight = '400px';
+leaderboardDiv.style.width = '400px';
+leaderboardDiv.style.padding = '0px';
+leaderboardDiv.style.margin = '0px';
+leaderboardDiv.style.textAlign = 'center';
+leaderboardDiv.id = 'main-div';
 
-document.getElementById('main-div').replaceWith(homeDiv);
+document.getElementById('main-div').replaceWith(leaderboardDiv);
 
 gameState = {
     isPlaying: false,
@@ -54,7 +54,17 @@ document.getElementById('main-div').style.backgroundColor = 'skyblue';
 ipcRenderer.send('getLeaderboard', '');
 
 ipcRenderer.on('leaderboard', (event, data) => {
-    renderTable(data);
+    if (data != 'unavailable') {
+        renderTable(data);
+    } else {
+        document.getElementById('main-div').appendChild(spacer);
+        document.getElementById('main-div').appendChild(spacer);
+        document.getElementById('main-div').appendChild(spacer);
+
+        p = document.createElement('p');
+        p.innerText = 'Unable to load at the moment';
+        document.getElementById('main-div').appendChild(p);
+    }
 });
 
 function renderTable(data) {
@@ -77,6 +87,11 @@ function renderTable(data) {
     tr.appendChild(th);
 
     table.appendChild(tr);
+
+    if (document.getElementById('leaderboard-table')) {
+        document.getElementById('leaderboard-table').remove();
+    }
+
     document.getElementById('main-div').appendChild(table);
 
 

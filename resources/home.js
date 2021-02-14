@@ -20,7 +20,10 @@ sendStateChange(gameState);
 
 document.getElementById('main-div').style.backgroundColor = 'skyblue';
 
-
+uname = '';
+if (localStorage.getItem('userName')) {
+    uname = localStorage.getItem('userName');
+}
 
 // let text = document.createElement('h2');
 // text.innerText = 'Flappytoj';
@@ -52,8 +55,12 @@ nameinput.id = 'user-name-input';
 nameinput.style.height = '40px';
 nameinput.style.width = '200px';
 nameinput.style.marginTop = '10px';
+nameinput.value = uname;
 nameform.appendChild(nameinput);
-nameform.addEventListener('submit', (e) => e.preventDefault());
+nameform.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    await tryName();
+});
 
 playBtn = document.createElement('button');
 playBtn.style.border = 'none';
@@ -67,27 +74,7 @@ playBtn.style.margin = '5px';
 playBtn.style.marginTop = '10px';
 playBtn.addEventListener('click', async(e) => {
     e.preventDefault();
-
-    let n = document.getElementById('user-name-input').value;
-    if (await validateName(n) == true) {
-
-        if (localStorage.getItem('userName') != n) {
-            localStorage.setItem('bestScore', 0);
-        }
-
-        localStorage.setItem('userName', n);
-        gameState.userName = n;
-
-        script = document.createElement('script');
-        script.src = './resources/flappytoj.js';
-        script.id = 'main-running-script';
-
-        document.getElementById('main-running-script').replaceWith(script);
-    } else {
-        document.getElementById('invalid-name-error').style.display = 'inherit';
-    }
-
-
+    await tryName();
 })
 
 leadBtn = document.createElement('button');
@@ -120,4 +107,25 @@ document.getElementById('main-div').appendChild(leadBtn);
 
 async function validateName(name) {
     return /^[0-9a-zA-Z]+$/.test(name);
+}
+
+async function tryName() {
+    let n = document.getElementById('user-name-input').value;
+    if (await validateName(n) == true) {
+
+        if (localStorage.getItem('userName') != n) {
+            localStorage.setItem('bestScore', 0);
+        }
+
+        localStorage.setItem('userName', n);
+        gameState.userName = n;
+
+        script = document.createElement('script');
+        script.src = './resources/flappytoj.js';
+        script.id = 'main-running-script';
+
+        document.getElementById('main-running-script').replaceWith(script);
+    } else {
+        document.getElementById('invalid-name-error').style.display = 'inherit';
+    }
 }

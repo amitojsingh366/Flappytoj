@@ -82,6 +82,10 @@ electron_1.ipcMain.on('getLeaderboard', function (event, nothing) { return __awa
                     if (bWindow) {
                         bWindow.webContents.send('leaderboard', resp.data);
                     }
+                })["catch"](function (e) {
+                    if (bWindow) {
+                        bWindow.webContents.send('leaderboard', 'unavailable');
+                    }
                 })];
             case 1:
                 _a.sent();
@@ -133,11 +137,11 @@ function setActivity() {
                     largeImageText: 'Flappytoj',
                     smallImageKey: 'idling_med',
                     smallImageText: 'Idling',
+                    instance: false,
                     buttons: [
                         { label: 'Play Now', url: 'https://flappytoj.amitoj.net/' },
                         { label: 'Leaderboard', url: 'https://flappytoj.amitoj.net/leaderboard' },
-                    ],
-                    instance: false
+                    ]
                 };
                 if (gameState.isPlaying) {
                     presenceData.details = "Score: " + scores.current;
