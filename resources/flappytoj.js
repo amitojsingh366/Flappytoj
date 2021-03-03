@@ -59,7 +59,7 @@ document.body.onkeyup = function(e) {
         if (e.keyCode == 32 || e.keyCode == 38) {
             birdDY = 9
         }
-        if (e.keyCode == 27) {
+        if (e.keyCode == 27 || e.keyCode == 40) {
             paused = paused ? false : true;
             gameState.isPaused = paused;
             sendStateChange(gameState);

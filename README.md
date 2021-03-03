@@ -11,7 +11,7 @@ A game i made cause i was bored. Simple [electron](https://www.electronjs.org) b
 
 ### Keybinds (When in a game)
 
-- <kbd>esc</kbd> / `right click` to pause/resume
+- <kbd>esc</kbd> / <kbd>↓</kbd> / `right click` to pause/resume
 - <kbd>h</kbd> to go to home page
 - <kbd>Space</kbd> / <kbd>↑</kbd> / `left click` to make the toj flap
 

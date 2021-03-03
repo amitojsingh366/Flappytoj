@@ -35,7 +35,7 @@ let p = document.createElement('p');
 let c = document.createElement("canvas");
 let context = c.getContext("2d");
 let gameDiv = document.createElement('div');
-const birds = ['./resources/toj.png', './resources/teg.png', './resources/tesh.png', './resources/deep.png', "./resouces/dam.png"];
+const birds = ['./resources/toj.png', './resources/teg.png', './resources/tesh.png', './resources/deep.png', './resources/dam.png'];
 let birdX = birdDY = 0;
 let interval = birdSize = pipeWidth = topPipeBottomY = 24;
 let birdY = pipeGap = 200;

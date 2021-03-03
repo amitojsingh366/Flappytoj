@@ -4,7 +4,7 @@
         "productName": "Flappytoj"
     },
     "name": "flappytoj",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Simple electron based flappybird ripoff",
     "files": [
         "./build/**/*",
@@ -31,6 +31,7 @@
         "electron-builder": "^22.9.1"
     },
     "dependencies": {
+        "@types/electron": "^1.6.10",
         "axios": "^0.21.1",
         "discord-rpc": "^3.2.0"
     }
